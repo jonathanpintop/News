@@ -6,9 +6,6 @@ const Header = ({titulo}) => {
           <a href="#!" className="brand-logo center">{titulo}</a>
 
 
-<div className="container white">
-    <h1>Formulario aqui</h1>
-</div>
 
       </nav>
     )
