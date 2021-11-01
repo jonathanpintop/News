@@ -1,7 +1,7 @@
 import React,{Fragment,useState,useEffect} from "react";
 import Header from "./components/Header";
 import Formulario from "./components/Formulario";
-
+import ListadoNoticias from "./components/ListadoNoticias";
 
 
 
@@ -72,6 +72,17 @@ guardarCategoria={guardarCategoria}
 
 
 />
+
+
+<ListadoNoticias
+noticias={noticias}
+
+/>
+
+
+
+
+
 </div>
 
 
