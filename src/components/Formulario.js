@@ -31,7 +31,7 @@ const [categoria, SelectNoticias] = useSelect('general', OPCIONES);
 
 // submit al form, pasar categoria a app.js
 
-const buscadorNoticias = e => {
+const buscarNoticias = e => {
   e.preventDefault();
 
 
@@ -43,10 +43,10 @@ const buscadorNoticias = e => {
 
 
   return (
-    <div className={`${styles.buscador} row`}>
+      <div className={`${styles.buscador} row`}>
       <div className="col s12 m8 offset-m2">
         <form
-        onSubmit={buscadorNoticias}
+        onSubmit={buscarNoticias}
         
         >
           <h2 className={styles.heading}>Encuentra Noticias por Categoría</h2>

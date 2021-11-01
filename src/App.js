@@ -1,4 +1,4 @@
-import React,{Fragment,useState} from "react";
+import React,{Fragment,useState,useEffect} from "react";
 import Header from "./components/Header";
 import Formulario from "./components/Formulario";
 
@@ -15,9 +15,48 @@ function App() {
 
 
 
+// Definir la categorioa y noticias
+
+  const [categoria,guardarCategoria] = useState('');
+  const [noticias,guardarNoticias] = useState([]);
 
 
-  const [categoria,guardarCategoria] = useState('')
+
+
+
+useEffect(()=> {
+
+const consultarAPI = async () => {
+
+const url =`http://newsapi.org/v2/top-headlines?country=co&category=${categoria}&apiKey=50b767742e084a819bfc07e22d2a505e`;
+
+
+
+
+
+const respuesta = await fetch(url);
+const noticias = await respuesta.json();
+
+guardarNoticias(noticias.articles);
+
+
+}
+consultarAPI();
+
+},[categoria]);
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
    <Fragment>
      <Header 
